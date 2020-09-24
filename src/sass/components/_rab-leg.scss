@@ -31,7 +31,6 @@
     @include maxLg() {
       font-size: 18px;
     }
-
   }
 
   &__search {
@@ -45,7 +44,6 @@
     display: -ms-flexbox;
     display: flex;
     overflow: hidden;
-
 
     input {
       width: 100%;
@@ -70,6 +68,12 @@
       height: 100%;
       font-size: 18px;
       color: #fff;
+    }
+  }
+
+  .nav-menu {
+    .def-link {
+      margin-left: 25px;
     }
   }
 }
