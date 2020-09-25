@@ -74,6 +74,17 @@
   .nav-menu {
     .def-link {
       margin-left: 25px;
+      &:first-child {
+        margin-left: 0;
+      }
     }
+
+    @include maxMd() {
+      margin-top: 40px;
+    }
+  }
+
+  .logoEka {
+    width: 120px;
   }
 }

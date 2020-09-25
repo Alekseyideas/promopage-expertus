@@ -4,7 +4,6 @@
 
   .col-lg-6 {
     margin-top: 40px;
-
   }
 
   .review {
@@ -26,7 +25,7 @@
       p {
         font-size: 16px;
         line-height: 1.5;
-        opacity: .8;
+        opacity: 0.8;
       }
     }
   }
@@ -72,35 +71,35 @@
   .slideRev {
     max-width: 600px;
     margin: 70px auto 0;
-
+    @include maxSm() {
+      width: 80%;
+    }
     .slick-arrow {
       font-size: 0;
       width: 40px;
       height: 40px;
-      background: rgba($color: #e50000, $alpha: 0) url('../images/709586.svg') no-repeat center / contain;
+      background: rgba($color: #e50000, $alpha: 0) url('../images/709586.svg')
+        no-repeat center / contain;
       position: absolute;
       top: 50%;
-      opacity: .3;
+      opacity: 0.3;
       transform: translateY(-50%);
       border-radius: 50%;
 
       &:hover {
-        opacity: .6;
+        opacity: 0.6;
       }
 
       &.slick-next {
         left: 100%;
         margin-left: 20px;
-
       }
 
       &.slick-prev {
         right: 100%;
         margin-right: 20px;
         transform: translateY(-50%) rotate(180deg);
-
       }
     }
   }
-
 }
