@@ -26,20 +26,20 @@ const config = {
   js: `/js`,
   images: `/images`,
   minImages: `/images`,
-  production: !!util.env.production
+  production: !!util.env.production,
 };
 
-const browserSync = done => {
+const browserSync = (done) => {
   browsersync.init({
     server: {
-      baseDir: dist
+      baseDir: dist,
     },
-    port: 3000
+    port: 4011,
   });
   done();
 };
 
-const browserSyncReload = done => {
+const browserSyncReload = (done) => {
   browsersync.reload();
   done();
 };
@@ -61,10 +61,10 @@ const images = () => {
           plugins: [
             {
               removeViewBox: false,
-              collapseGroups: true
-            }
-          ]
-        })
+              collapseGroups: true,
+            },
+          ],
+        }),
       ])
     )
     .pipe(gulp.dest((config.production ? build : dist) + config.images));
@@ -76,12 +76,12 @@ const sassTask = () => {
     .pipe(config.production ? util.noop() : sourcemaps.init())
     .pipe(
       sass({
-        outputStyle: 'compressed'
+        outputStyle: 'compressed',
       }).on('error', sass.logError)
     )
     .pipe(
       autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {
-        cascade: true
+        cascade: true,
       })
     )
     .pipe(config.production ? util.noop() : sourcemaps.write())
@@ -95,7 +95,7 @@ const pugTask = () => {
     .src(`${src + config.pug}/**/*.pug`)
     .pipe(
       pug({
-        pretty: true
+        pretty: true,
       })
     )
     .pipe(gulp.dest(config.production ? build : dist))
@@ -109,7 +109,7 @@ const jsTask = () => {
       webpackStream({
         mode: config.production ? 'production' : 'development',
         output: {
-          filename: 'main.js'
+          filename: 'main.js',
         },
         module: {
           rules: [
@@ -119,12 +119,12 @@ const jsTask = () => {
               use: {
                 loader: 'babel-loader',
                 options: {
-                  presets: ['@babel/preset-env']
-                }
-              }
-            }
-          ]
-        }
+                  presets: ['@babel/preset-env'],
+                },
+              },
+            },
+          ],
+        },
       })
     )
     .pipe(gulp.dest((config.production ? build : dist) + config.js))

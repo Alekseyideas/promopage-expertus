@@ -19,15 +19,16 @@ $('document').ready(() => {
     console.log($('.site img').height());
     switch (+slideno) {
       case 2:
-        return fnGoTOSlide(140);
+        return fnGoTOSlide(180);
       case 3:
-        return fnGoTOSlide(650);
+        return fnGoTOSlide(320);
       case 4:
-        return fnGoTOSlide(2350);
+        return fnGoTOSlide(2255);
       case 5:
-        return fnGoTOSlide(3500);
+        return fnGoTOSlide(4250);
       case 6:
-        return fnGoTOSlide($('.site img').height());
+        return fnGoTOSlide(7200);
+      // return fnGoTOSlide($('.site img').height());
       default:
         return fnGoTOSlide(0);
     }

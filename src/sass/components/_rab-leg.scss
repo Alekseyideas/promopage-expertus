@@ -31,7 +31,6 @@
     @include maxLg() {
       font-size: 18px;
     }
-
   }
 
   &__search {
@@ -45,7 +44,6 @@
     display: -ms-flexbox;
     display: flex;
     overflow: hidden;
-
 
     input {
       width: 100%;
@@ -71,5 +69,22 @@
       font-size: 18px;
       color: #fff;
     }
+  }
+
+  .nav-menu {
+    .def-link {
+      margin-left: 25px;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    @include maxMd() {
+      margin-top: 40px;
+    }
+  }
+
+  .logoEka {
+    width: 120px;
   }
 }
